@@ -41,7 +41,7 @@ class TestSubmarine2 < Minitest::Test
   def test_forward_upwards
     state = @submarine.next(@initial_state.merge(aim: -5), [:forward, 5])
     assert_equal 5, state[:horizontal]
-    assert_equal -25, state[:depth]
+    assert_equal (-25), state[:depth]
   end
 
   def test_forward_downwards
@@ -52,7 +52,7 @@ class TestSubmarine2 < Minitest::Test
 
   def test_up
     state = @submarine.next(@initial_state, [:up, 5])
-    assert_equal -5, state[:aim]
+    assert_equal (-5), state[:aim]
   end
 
   def test_down

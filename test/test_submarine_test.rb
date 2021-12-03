@@ -38,7 +38,7 @@ class TestSubmarine < Minitest::Test
 
   def test_up
     state = @submarine.next(@initial_state, [:up, 5])
-    assert_equal -5, state[:depth]
+    assert_equal (-5), state[:depth]
   end
 
   def test_down
