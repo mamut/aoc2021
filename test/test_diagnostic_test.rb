@@ -31,4 +31,16 @@ class TestDiagnostic < Minitest::Test
   def test_power_consumption
     assert_equal 198, @diagnostic.power_consumption
   end
+
+  def test_oxygen_generator_rating
+    assert_equal 23, @diagnostic.oxygen_generator_rating
+  end
+
+  def test_co2_scrubber_rating
+    assert_equal 10, @diagnostic.co2_scrubber_rating
+  end
+
+  def test_life_support_rating
+    assert_equal 230, @diagnostic.life_support_rating
+  end
 end
