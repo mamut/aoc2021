@@ -10,6 +10,8 @@ require './lib/diagnostic'
 
 require './lib/bingo'
 
+require './lib/vents'
+
 task default: "test"
 
 Rake::TestTask.new do |task|
@@ -71,4 +73,12 @@ task :day04 do
 
   pp win.final_score
   pp lose.final_score
+end
+
+desc 'Vents'
+task :day05 do
+  data = File.read('./data/05.txt')
+  vents = Vents.new(data)
+
+  pp vents.nr_of_city_overlaps
 end
