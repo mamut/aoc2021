@@ -1,21 +1,6 @@
 require 'rake/testtask'
 
-require './lib/sonar'
-require './lib/sonar2'
-
-require './lib/submarine'
-require './lib/submarine2'
-
-require './lib/diagnostic'
-
-require './lib/bingo'
-
-require './lib/vents'
-
-require './lib/lanternfish'
-
-require './lib/crabs'
-require './lib/crabs2'
+Dir["./lib/*.rb"].each { |file| require file }
 
 task default: "test"
 
