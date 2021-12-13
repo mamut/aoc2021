@@ -18,7 +18,7 @@ end
 
 desc 'Sonar'
 task :day01 do
-  data = File.read('./data/01a/data.txt').split("\n").map(&:to_i)
+  data = File.read('./data/01.txt').split("\n").map(&:to_i)
 
   day01a = Day01A.new(data: data)
   day01b = Day01B.new(data: data)
@@ -29,7 +29,7 @@ end
 
 desc 'Submarine'
 task :day02 do
-  commands = File.read('./data/02a/data.txt').split("\n").map do |line|
+  commands = File.read('./data/02.txt').split("\n").map do |line|
     command, value = line.split(' ')
     [command.to_sym, value.to_i]
   end
@@ -49,7 +49,7 @@ end
 
 desc 'Diagnostic'
 task :day03 do
-  data = File.read('./data/03a/data.txt').split("\n")
+  data = File.read('./data/03.txt').split("\n")
 
   diagnostic = Diagnostic.new(data)
 
@@ -59,7 +59,7 @@ end
 
 desc 'Bingo'
 task :day04 do
-  content = File.read('./data/04a/data.txt')
+  content = File.read('./data/04.txt')
   chunks = content.split("\n\n")
 
   numbers = chunks.shift.split(",").map(&:to_i)
