@@ -12,6 +12,8 @@ require './lib/bingo'
 
 require './lib/vents'
 
+require './lib/lanternfish'
+
 task default: "test"
 
 Rake::TestTask.new do |task|
@@ -82,4 +84,15 @@ task :day05 do
 
   pp vents.nr_of_city_overlaps
   pp vents.nr_of_overlaps
+end
+
+desc 'Lanternfish'
+task :day06 do
+  data = File.read('./data/06.txt')
+
+  colony = Lanternfish::Colony.from(data)
+  lanternfish = Lanternfish.new(colony)
+
+  pp lanternfish.days(80).count
+  pp lanternfish.days(256).count
 end
