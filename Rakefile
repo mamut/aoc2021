@@ -15,7 +15,7 @@ require './lib/vents'
 task default: "test"
 
 Rake::TestTask.new do |task|
- task.pattern = "test/*_test.rb"
+ task.pattern = "test/test_*.rb"
 end
 
 desc 'Sonar'
