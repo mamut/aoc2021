@@ -14,6 +14,8 @@ require './lib/vents'
 
 require './lib/lanternfish'
 
+require './lib/crabs'
+
 task default: "test"
 
 Rake::TestTask.new do |task|
@@ -95,4 +97,11 @@ task :day06 do
 
   pp lanternfish.days(80).count
   pp lanternfish.days(256).count
+end
+
+desc 'Crabs'
+task :day07 do
+  data = File.read('./data/07.txt')
+  crabs = Crabs.from(data)
+  pp crabs.least_fuel
 end
