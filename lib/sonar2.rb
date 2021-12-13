@@ -1,6 +1,6 @@
 require './lib/sliding_window'
 
-class Day01B
+class Sonar2
   def initialize(data:)
     @data = data
   end

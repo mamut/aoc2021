@@ -1,7 +1,7 @@
 require 'rake/testtask'
 
-require './lib/day_01_a'
-require './lib/day_01_b'
+require './lib/sonar'
+require './lib/sonar2'
 
 require './lib/submarine'
 require './lib/submarine2'
@@ -20,11 +20,11 @@ desc 'Sonar'
 task :day01 do
   data = File.read('./data/01.txt').split("\n").map(&:to_i)
 
-  day01a = Day01A.new(data: data)
-  day01b = Day01B.new(data: data)
+  sonar1 = Sonar.new(data: data)
+  sonar2 = Sonar2.new(data: data)
 
-  pp day01a.run
-  pp day01b.run
+  pp sonar1.run
+  pp sonar2.run
 end
 
 desc 'Submarine'

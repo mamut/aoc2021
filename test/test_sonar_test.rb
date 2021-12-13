@@ -1,10 +1,10 @@
 require 'minitest/autorun'
 
-require './lib/day_01_b'
+require './lib/sonar'
 
-class TestDay01B < Minitest::Test
+class TestSonar < Minitest::Test
   def setup
-    @day = Day01B.new(data: [
+    @sonar = Sonar.new(data: [
       199,
       200,
       208,
@@ -19,6 +19,6 @@ class TestDay01B < Minitest::Test
   end
 
   def test_that_result_matches_example
-    assert_equal 5, @day.run
+    assert_equal 7, @sonar.run
   end
 end

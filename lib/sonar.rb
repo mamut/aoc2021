@@ -1,4 +1,4 @@
-class Day01A
+class Sonar
   def initialize(data:)
     @data = data
   end
