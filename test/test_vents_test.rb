@@ -32,13 +32,23 @@ class TestVents < Minitest::Test
     assert_equal [[7,0], [7,1], [7,2], [7,3], [7,4]], line.points
   end
 
-  def test_line_diagonal
-    line = Vents::Line.new('8,0 -> 0,8')
+  def test_line_diagonal_1
+    line = Vents::Line.new('1,1 -> 3,3')
     assert_equal false, line.city?
-    assert_nil line.points
+    assert_equal [[1,1], [2,2], [3,3]], line.points
+  end
+
+  def test_line_diagonal_2
+    line = Vents::Line.new('0,3 -> 3,0')
+    assert_equal false, line.city?
+    assert_equal [[0,3], [1,2], [2,1], [3,0]], line.points
+  end
+
+  def test_number_of_city_overlaps
+    assert_equal 5, @vents.nr_of_city_overlaps
   end
 
   def test_number_of_overlaps
-    assert_equal 5, @vents.nr_of_city_overlaps
+    assert_equal 12, @vents.nr_of_overlaps
   end
 end

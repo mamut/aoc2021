@@ -81,4 +81,5 @@ task :day05 do
   vents = Vents.new(data)
 
   pp vents.nr_of_city_overlaps
+  pp vents.nr_of_overlaps
 end
