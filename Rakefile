@@ -15,6 +15,7 @@ require './lib/vents'
 require './lib/lanternfish'
 
 require './lib/crabs'
+require './lib/crabs2'
 
 task default: "test"
 
@@ -102,6 +103,9 @@ end
 desc 'Crabs'
 task :day07 do
   data = File.read('./data/07.txt')
-  crabs = Crabs.from(data)
-  pp crabs.least_fuel
+  crabs1 = Crabs.from(data)
+  crabs2 = Crabs2.from(data)
+
+  pp crabs1.least_fuel
+  pp crabs2.least_fuel
 end

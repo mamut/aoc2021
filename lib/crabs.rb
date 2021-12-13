@@ -17,7 +17,7 @@ class Crabs
   end
 
   def cost_to_shift_to(new_position)
-    @positions.sum { |position| (position - new_position).abs }
+    @positions.sum { |position| cost(position, new_position) }
   end
 
   def best_position
@@ -26,5 +26,11 @@ class Crabs
 
   def least_fuel
     cost_to_shift_to(best_position)
+  end
+
+  private
+
+  def cost(position, new_position)
+    (position - new_position).abs
   end
 end
